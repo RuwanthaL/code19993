@@ -1,0 +1,31 @@
+touch sum.c
+-sum.c-
+#include<stdio.h>
+#include<mpi.h>
+
+	int main(int argc, char** argv){
+	
+       int a;
+       int b;
+       int sum=0;
+	
+	MPI_Init(NULL,NULL);
+	
+	printf("Enter First Number");
+	scanf("%d",& a);
+	
+	printf("Enter second Number");
+	scanf("%d",& b);
+	
+	
+	printf("Sum = %d",(a+b));
+	
+	
+	
+	
+	MPI_Finalize();
+	return 0;
+	}
+-compile-
+mpicc sum.c -o summ
+mpirun -np 1 ./summ
